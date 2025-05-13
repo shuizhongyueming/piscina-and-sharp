@@ -1,5 +1,10 @@
 import fs from 'node:fs/promises';
 import { bufferTask, sharpTask, stringUpperTask } from './worker.js';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 async function runTest(taskName, inputDataGenerator, expectError = false) { // expectError is now false by default
@@ -83,7 +88,7 @@ async function main() {
   // Test 2: Buffer Task (reverse buffer content)
   await Promise.all(
     arr.map(i => runTest('bufferTask', async () => {
-      const imgBuffer = await fs.readFile('./helen-van-yH6pheDeWyU-unsplash.jpg');
+      const imgBuffer = await fs.readFile(path.join(__dirname, './helen-van-yH6pheDeWyU-unsplash.jpg'));
       return {
         id: `bufferTest-${Date.now()}`,
         payload: {
@@ -97,7 +102,7 @@ async function main() {
   // Test 3: Sharp Task (process a valid JPG)
   await Promise.all(
     arr.map(i => runTest('sharpTask', async () => {
-      const imgBuffer = await fs.readFile('./helen-van-yH6pheDeWyU-unsplash.jpg');
+      const imgBuffer = await fs.readFile(path.join(__dirname, './helen-van-yH6pheDeWyU-unsplash.jpg'));
       return {
         id: `sharpTestValidPng-${Date.now()}`,
         payload: {

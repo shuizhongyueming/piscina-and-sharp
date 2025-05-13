@@ -5,7 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node main.js",
+    "start": "node piscina/main.js",
     "test-node20": "echo 'Ensure you are using Node.js v20.x and run: node main.js'",
     "test-node22": "echo 'Ensure you are using Node.js v22.x and run: node main.js'"
   },
