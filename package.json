@@ -5,7 +5,9 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node piscina/main.js",
+    "piscina": "node piscina/main.js",
+    "worker": "node worker/main.js",
+    "worker_copy": "APPLY_WORKAROUND=true node worker/main.js",
     "test-node20": "echo 'Ensure you are using Node.js v20.x and run: node main.js'",
     "test-node22": "echo 'Ensure you are using Node.js v22.x and run: node main.js'"
   },
