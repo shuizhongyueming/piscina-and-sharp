@@ -1,0 +1,24 @@
+{
+  "name": "piscina-repro-example",
+  "version": "1.0.0",
+  "description": "A minimal example to reproduce potential Piscina and Sharp error handling issues with Node.js v22.x",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "test-node20": "echo 'Ensure you are using Node.js v20.x and run: node main.js'",
+    "test-node22": "echo 'Ensure you are using Node.js v22.x and run: node main.js'"
+  },
+  "keywords": [
+    "piscina",
+    "worker_threads",
+    "repro",
+    "sharp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "piscina": "^4.0.0",
+    "sharp": "^0.33.0"
+  }
+}
